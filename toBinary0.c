@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef char * string;
 int printNum_0(char *str);
 
 int main(int argc, char *argv[])
