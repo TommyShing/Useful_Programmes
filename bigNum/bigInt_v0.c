@@ -64,7 +64,7 @@ int main(void)
         }
         in = getc(stdin);
     }
-    bigInt *num = malloc(sizeof(bigInt *));
+    bigInt *num = malloc(sizeof(char *) + sizeof(long long));
     if (num == NULL)
     {
         freelist(inlist);
