@@ -1,0 +1,6 @@
+1. AD, BC过原点O => △AOC∽△DOB, △ABC∽△FBO, △BAD∽△FAO => AF/OF=AB/DB=2l₁/p=(l₁+l₂)/l₂ => l₁l₂/(l₁+l₂)=p/2
+2. 梯形FOGA∽梯形BHOF <=> AG×BH=OF² <=> x₁x₂=p²/4
+3. △CAE∽△DBE => AE/CA=BE/DB => AE/AF=BE/BF => EF平分∠AEB => AE与BE斜率为相反数, 且其中更长边与抛物线另一交点与短边的点是对应的
+4. (⚪○◯)过CDF的⊙I <=> ∠CDF=90° <=> CE×DE=EF² <=> y₁y₂=-p²
+5. 梯形FOGA∽梯形BHOF => l₁y₂+l₂y₁=0 => (x₁+p/2)y₂+(x₂+p/2)y₁=0 => 2x₁/p=p/2x₂=l₁/l₂=y₁/y₂ => x₁/x₂=l₁²/l₂²=y₁²/y₂²
+6. 
