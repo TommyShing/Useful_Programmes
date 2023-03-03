@@ -1,0 +1,12 @@
+Define a parabola (main).  func: y² = 2p x
+Get focus of the parabola (F).  
+Define a line through the focus (l).  func: m y = x - p / 2
+Define the intersections of the line and the parabola (A & B).  func: (p m² + p m (m² + 1)^0.5 + p / 2, p m + p (m² + 1)^0.5) & (p m² - p m (m² + 1)^0.5 + p / 2, p m - p (m² + 1)^0.5)
+let lz be the directrix of a parabola.  func: x = (-p) / 2
+Define two points on the directrix whose vertical ordinates respectively correspond to the two intersections (C & D).  func: ((-p) / 2, p m + p (m² + 1)^0.5) & ((-p) / 2, p m - p (m² + 1)^0.5)
+Define the intersection of lz and the x axis (E).  func: ((-p) / 2, 0)
+Define two points on the y axis whose vertical ordinates respectively correspond to the two intersections (G & H).  func: (0, p m + p (m² + 1)^0.5) & (0, p m - p (m² + 1)^0.5)
+The following length marks are meant to indicate trapezoidal FOGA∽trapezoidal BHOF.  
+Define a line through the focus that is perpendicular to l (l0) and the intersection of l0 and lz (I).  func: y = -(m (x - p / 2)) & ((-p) / 2, m p)
+Define a point on l whose vertical ordinate correspond to I, which is in fact the midpoint of AB (J).  func: (p m² + p / 2, p m)
+
