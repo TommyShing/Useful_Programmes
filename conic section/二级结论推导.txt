@@ -1,6 +1,14 @@
-1. AD, BC过原点O => △AOC∽△DOB, △ABC∽△FBO, △BAD∽△FAO => AF/OF=AB/DB=2l₁/p=(l₁+l₂)/l₂ => l₁l₂/(l₁+l₂)=p/2
-2. 梯形FOGA∽梯形BHOF <=> AG×BH=OF² <=> x₁x₂=p²/4
-3. △CAE∽△DBE => AE/CA=BE/DB => AE/AF=BE/BF => EF平分∠AEB => AE与BE斜率为相反数, 且其中更长边与抛物线另一交点与短边的点是对应的
-4. (⚪○◯)过CDF的⊙I <=> ∠CDF=90° <=> CE×DE=EF² <=> y₁y₂=-p²
-5. 梯形FOGA∽梯形BHOF => l₁y₂+l₂y₁=0 => (x₁+p/2)y₂+(x₂+p/2)y₁=0 => 2x₁/p=p/2x₂=l₁/l₂=y₁/y₂ => x₁/x₂=l₁²/l₂²=y₁²/y₂²
-6. 
+1. AD, BC过原点O -> △AOC∽△DOB, △ABC∽△FBO, △BAD∽△FAO -> AF/OF=AB/DB=2l₁/p=(l₁+l₂)/l₂ -> l₁l₂/(l₁+l₂)=p/2
+2. 梯形FOGA∽梯形BHOF <-> AG×BH=OF² <-> x₁x₂=p²/4
+3. △CAE∽△DBE -> AE/CA=BE/DB -> AE/AF=BE/BF -> EF平分∠AEB -> AE与BE斜率为相反数, 且其中更长边与抛物线另一交点与短边的点是对应的
+4. (⚪○◯)过CDF的⊙I <-> ∠CDF=90° <-> CE×DE=EF² <-> y₁y₂=-p² -> l₁l₂/(m²+1)=p²
+5. 梯形FOGA∽梯形BHOF -> l₁y₂+l₂y₁=0 -> (x₁+p/2)y₂+(x₂+p/2)y₁=0 -> 2x₁/p=p/2x₂=l₁/l₂=y₁/y₂ -> x₁/x₂=l₁²/l₂²=y₁²/y₂²
+6. l₁l₂/(m²+1)=p² & m(l₁+l₂)/√(m²+1)=|l₁-l₂| & l₁l₂/(l₁+l₂)=p/2 -> 4m²l₁l₂=(l₁-l₂)² -> DC²=(y₁-y₂)²=(x₁-x₂)²/m²=(l₁-l₂)²/m²=4l₁l₂=2p(l₁+l₂)=2pAB (AB≥DC)
+7. IF⊥AB & AI⊥BI -> I(-p/2, pm) -> IF=p√(m²+1) -> DC=2p√(m²+1) -> AB=2p(m²+1) (intuitive)
+8. FE⊥DC & CF⊥DF -> l₁l₂=IF²=p²(m²+1) (intuitive)
+9. x₁-x₂=l₁-l₂=m(l₁+l₂)/√(m²+1)=(y₁+y₂)√(m²+1)=m(y₁-y₂)
+10. △IEF∽△JFI, IF=p√(m²+1) -> IJ=p(m²+1) -> J(pm²+p/2, pm), IF²=pIJ=l₁l₂ (intuitive)
+11. △CAF∽△DIF, △CIF∽△DBF: 相似比=CF/DF=√(l₁/l₂)=√-(y₁/y₂), AF/IF=IF/BF
+12. EO=OF -> OL=LH, OK=KG -> AI, BI分别为A, B切线 (或者以△ACI≌△AFI, △DBI≌△FBI证明)
+13. DF⊥BI, CF⊥AI & FK=FC/2=√(y₁²+p²)/2 & FA=AC=y₁²/(2p)+p²/(2p)=FK√(y₁²+p²)/p & CF=EF√(y₁²+p²)/p -> △FEC∽△FKA, △FED∽△FLB -> CF, DF分别为∠EFA, ∠EFB角平分线, AF=EF(y₁²+p²)/2p² & EF=p -> 2pAF=FC² (AF≥p/2)
+
