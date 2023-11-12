@@ -50,21 +50,37 @@ int calc(char* ptr, int i, int *data, int sp, char *cdt, int cdtlen)//space rema
 {
     int sum = 0, pro = 0, ter = 0;
     /*
-      sum: +, -
-      pro: *, /
-      ter: ^
+    sum: +, -
+    pro: *, /
+    ter: ^
     */
     int buf = 0;
     int state = 0;
     /*
-      the first digit 0(sum) or 1(pro or ter)
-      the second digit 0(+) or 1(-)
-      the third digit 0(*) or 1(/)
-      the fourth digit 0(pro) or 1(ter)
-      e.g. 0011: sum with -, pro with *; 1001: sum with +, pro with *, ter
+    the first digit 0(sum) or 1(pro or ter)
+    the second digit 0(+) or 1(-)
+    the third digit 0(*) or 1(/)
+    the fourth digit 0(pro) or 1(ter)
+    e.g. 0011: sum with -, pro with *; 1001: sum with +, pro with *, ter
     */
     while (1)
     {
+        while (*ptr == ' ')
+        {
+            ptr++;
+        }
+        switch (*ptr)
+        {
+            case '('
+                buf = calc_bracket();
+                break;
+            case 't':
+                buf = data[0];
+            case 'h':
+                buf = data[1];
+            case 'w':
+                buf = data[2];
+        }
         
         switch (*ptr)
         {
