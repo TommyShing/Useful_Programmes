@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     //argv -> str
     int len = 0;
-    for (int i = 0, counter = 0; i < argc; i++)
+    for (int i = 1, counter = 0; i < argc; i++)
     {
         while (argv[i][counter] != '\0')
         {
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     param[len] = '\0';
 
     len = 0;
-    for (int i = 0, counter = 0; i < argc; i++)
+    for (int i = 1, counter = 0; i < argc; i++)
     {
         while (argv[i][counter] != '\0')
         {
@@ -35,10 +35,11 @@ int main(int argc, char *argv[])
         }
         counter = 0;
     }
-    free(param);
-    param = "114^(6+7-5*2+(-1))*2{";
+    printf("%s\n", param);
+    char *home = param;
     printf("%i\n", calc(&param, 0, NULL));
 
+    free(home);
     int data[3];//t, h, w
 
 
