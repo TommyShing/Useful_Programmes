@@ -40,8 +40,38 @@ int main(int argc, char *argv[])
     printf("%i\n", calc(&param, 0, NULL));
 
     free(home);
-    int data[3];//t, h, w
-
+    int data[3];//t, h, w, i?
+    //get process
+    int size = sizeof(int) * data[2];
+    int *set = malloc(size);
+    
+    for (int i = 0; i < data[2]; i++)
+    {
+        scanf("%i", &set[i]);
+    }
+    
+    for (int t = 0; t < data[1]; t++)
+    {
+        data[0] = t;
+        int *core = malloc(size);
+        int *tmp = malloc(size);
+        set_arith(core, 0, data, 1, param, 0);
+        //conv
+        for (int i = 0; i < w; i++)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                tmp[i] += set[j] * core[i - j];
+            }
+            printf("%i ", tmp[i]);
+        }
+        free(set);
+        set = tmp;
+        free(core);
+        printf("\n");
+        param = home;
+    }
+    free(set);
 
     return 0;
 }
@@ -275,4 +305,165 @@ int myPow(int x, int n)
         n >>= 1;
     }
     return result;
+}
+
+int set_link(int *core, int index, int *data, int co, char **str)
+{
+    char *tmp = ++*str;
+    for (int i = 0; i < co; i++)
+    {
+        *str = tmp;
+        while (**str != ']')
+        {
+            core[++index] += calc(str, i, data);
+            switch (index)
+            {
+                case data[2]://data[w]
+                    return index;
+            }
+        }
+    }
+    //co is 0
+    while (**str != ']')
+    {
+        (*str)++;
+    }
+    return index;
+}
+
+int set_add(int *core, int index, int *data, int co, char **str)
+{
+    while (**str != ']')
+    {
+        data[3] = 0;//data[buf]
+        char *tmp = ++*str;
+        int val = calc(str, 0, data);
+        switch (data[3])
+        {
+            case 0:
+                core[++index] += co * val;
+                break;
+            default://case 1:
+                switch (co)
+                {
+                    case 0:
+                        index++;
+                        break;
+                    default:
+                        core[++index] += val;
+                        for (int i = 1; i < co; i++)
+                        {
+                            *str = tmp;
+                            core[index] += calc(str, i, data);
+                        }
+                        break;
+                }
+                break;
+        }
+        switch (index)
+        {
+            case data[2]://data[w]
+                return index;
+        }
+    }
+    return index;
+}
+
+int set_arith(int *core, int index, int *data, int co, char **str, int isAdd)
+{
+    int home = index, max = 0;
+    char *tmp = ++*str;//{ -> val
+    for (int i = 0; i < co; i++)
+    {
+        *str = tmp;
+        while(**str != '}' || **str != '\0')
+        {
+            switch (**str)
+            {
+                case '+':
+                    if (index > max)
+                    {
+                        max = index;
+                    }
+                    index = home;
+                    (*str)++;
+                    break;
+            }
+            int val = calc(str, i, data);
+            switch (**str)
+            {
+                case '+':
+                    (*str)++;
+                    switch (**str)
+                    {
+                        case '[':
+                            index = set_add(core, index, data, val, str);
+                            break;
+                        case '{':
+                            index = set_arith(core, index, data, val, str, 1);
+                            break;
+                    }
+                    break;
+                case '[':
+                    index = set_link(core, index, data, val, str);
+                    break;
+                case '{':
+                    index = set_arith(core, index, data, val, str, 0);
+                    break;
+            }
+            switch (index)
+            {
+                case data[2]://data[w]
+                    unsigned int sign = 2;
+                    while (sign)
+                    {
+                        switch (*((*str)++))
+                        {
+                            case '[':
+                            case '{':
+                                sign++;
+                                break;
+                            case ']':
+                            case '}':
+                                sign--;
+                                switch (sign)
+                                {
+                                    case 1:
+                                        switch (**str)
+                                        {
+                                            case '+':
+                                            case '}':
+                                            case '\0':
+                                                sign = 0;
+                                                break;
+                                        }
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                default:
+                    (*str)++;
+                    break;
+            }
+        }
+        switch (isAdd)
+        {
+            case 1:
+                if (index > max)
+                {
+                    max = index;
+                }
+                index = home;
+                break;
+        }
+    }
+    switch (isAdd)
+    {
+        case 1:
+            return max;
+        default:
+            return index;
+    }
 }
